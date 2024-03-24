@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 1.13.1
+_src_path: gh:algorandfoundation/algokit-beaker-default-template
+author_email: anicanedeljkovic16@gmail.com
+author_name: Anica
+contract_name: numberguess
+deployment_language: python
+preset_name: starter
+project_name: numberguess-contracts
+
