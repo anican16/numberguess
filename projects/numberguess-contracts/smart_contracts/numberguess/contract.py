@@ -26,7 +26,12 @@ class Ngstate:
     )
 
 
-app = beaker.Application("numberguess")
+app = beaker.Application("numberguess", state=Ngstate)
+
+
+@app.create(bare=True)
+def create() -> pt.Expr:
+    return app.initialize_global_state()
 
 
 @app.external
