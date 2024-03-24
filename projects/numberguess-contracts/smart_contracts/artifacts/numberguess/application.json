@@ -1,0 +1,103 @@
+{
+    "hints": {
+        "pocetak_igre(pay,string)string": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        },
+        "hello(string)string": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMQpieXRlY2Jsb2NrIDB4IDB4NDI2NTdhMjA2OTY3NzI2MTYzNjEgMHg2MjY1NzQ3NDY5NmU2NzVmNzQ2OTcwIDB4NjQ3Mjc1Njc2OTVmNjk2NzcyNjE2MyAweDcwNzI3NjY5NWY2OTY3NzI2MTYzIDB4Njg2MTczNjg1ZjZlNzU2ZDYyNjU3MiAweDQyNjU3YTIwNjg2MTczNjgyMDYyNzI2ZjZhNjEgMHg2ZTc1NmQ2MjY1NzIgMHg0MjY1N2EyMDYyNzI2ZjZhNjEgMHgxNTFmN2M3NQp0eG4gTnVtQXBwQXJncwppbnRjXzAgLy8gMAo9PQpibnogbWFpbl9sNgp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweDY5YTFiZTIyIC8vICJwb2NldGFrX2lncmUocGF5LHN0cmluZylzdHJpbmciCj09CmJueiBtYWluX2w1CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4MDJiZWNlMTEgLy8gImhlbGxvKHN0cmluZylzdHJpbmciCj09CmJueiBtYWluX2w0CmVycgptYWluX2w0Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGhlbGxvY2FzdGVyXzUKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDU6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgcG9jZXRha2lncmVjYXN0ZXJfNAppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sNjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sMTAKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gT3B0SW4KPT0KYm56IG1haW5fbDkKZXJyCm1haW5fbDk6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CmFzc2VydApjYWxsc3ViIG9wdGluXzEKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDEwOgp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAo9PQphc3NlcnQKY2FsbHN1YiBjcmVhdGVfMAppbnRjXzEgLy8gMQpyZXR1cm4KCi8vIGNyZWF0ZQpjcmVhdGVfMDoKcHJvdG8gMCAwCmJ5dGVjXzIgLy8gImJldHRpbmdfdGlwIgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dApieXRlY18zIC8vICJkcnVnaV9pZ3JhYyIKYnl0ZWNfMSAvLyAiQmV6IGlncmFjYSIKYXBwX2dsb2JhbF9wdXQKYnl0ZWMgNCAvLyAicHJ2aV9pZ3JhYyIKYnl0ZWNfMSAvLyAiQmV6IGlncmFjYSIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBvcHRfaW4Kb3B0aW5fMToKcHJvdG8gMCAwCmJ5dGVjIDQgLy8gInBydmlfaWdyYWMiCmFwcF9nbG9iYWxfZ2V0CmJ5dGVjXzEgLy8gIkJleiBpZ3JhY2EiCj09CmJueiBvcHRpbl8xX2w0CmJ5dGVjXzMgLy8gImRydWdpX2lncmFjIgphcHBfZ2xvYmFsX2dldApieXRlY18xIC8vICJCZXogaWdyYWNhIgo9PQpibnogb3B0aW5fMV9sMwppbnRjXzAgLy8gMApyZXR1cm4Kb3B0aW5fMV9sMzoKYnl0ZWNfMyAvLyAiZHJ1Z2lfaWdyYWMiCnR4biBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKYiBvcHRpbl8xX2w1Cm9wdGluXzFfbDQ6CmJ5dGVjIDQgLy8gInBydmlfaWdyYWMiCnR4biBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKb3B0aW5fMV9sNToKdHhuIFNlbmRlcgpieXRlYyA1IC8vICJoYXNoX251bWJlciIKYnl0ZWMgNiAvLyAiQmV6IGhhc2ggYnJvamEiCmFwcF9sb2NhbF9wdXQKdHhuIFNlbmRlcgpieXRlYyA3IC8vICJudW1iZXIiCmJ5dGVjIDggLy8gIkJleiBicm9qYSIKYXBwX2xvY2FsX3B1dApyZXRzdWIKCi8vIHBvY2V0YWtfaWdyZQpwb2NldGFraWdyZV8yOgpwcm90byAyIDEKYnl0ZWNfMCAvLyAiIgp0eG4gU2VuZGVyCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25JRAphcHBfb3B0ZWRfaW4KLy8gdW5hdXRob3JpemVkCmFzc2VydAppbnRjXzEgLy8gcGF5CmludGNfMSAvLyBwYXkKPT0KZnJhbWVfZGlnIC0yCmd0eG5zIFJlY2VpdmVyCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25BZGRyZXNzCj09CiYmCmJ5dGVjXzIgLy8gImJldHRpbmdfdGlwIgphcHBfZ2xvYmFsX2dldAppbnRjXzAgLy8gMAo9PQomJgp0eG4gU2VuZGVyCmJ5dGVjIDcgLy8gIm51bWJlciIKYXBwX2xvY2FsX2dldApieXRlYyA4IC8vICJCZXogYnJvamEiCj09CiYmCnR4biBTZW5kZXIKYnl0ZWMgNSAvLyAiaGFzaF9udW1iZXIiCmFwcF9sb2NhbF9nZXQKYnl0ZWMgNiAvLyAiQmV6IGhhc2ggYnJvamEiCj09CiYmCmFzc2VydApieXRlY18yIC8vICJiZXR0aW5nX3RpcCIKZnJhbWVfZGlnIC0yCmd0eG5zIEFtb3VudAphcHBfZ2xvYmFsX3B1dAp0eG4gU2VuZGVyCmJ5dGVjIDUgLy8gImhhc2hfbnVtYmVyIgpmcmFtZV9kaWcgLTEKZXh0cmFjdCAyIDAKc2hhMjU2CmFwcF9sb2NhbF9wdXQKcHVzaGJ5dGVzIDB4MDAxNTU1NzM3MDY1NzM2ZTZmMjA3MzYxNjM3NTc2NjE2ZTIwNjI3MjZmNmEyMSAvLyAweDAwMTU1NTczNzA2NTczNmU2ZjIwNzM2MTYzNzU3NjYxNmUyMDYyNzI2ZjZhMjEKZnJhbWVfYnVyeSAwCnJldHN1YgoKLy8gaGVsbG8KaGVsbG9fMzoKcHJvdG8gMSAxCmJ5dGVjXzAgLy8gIiIKcHVzaGJ5dGVzIDB4NDg2NTZjNmM2ZjJjMjAgLy8gIkhlbGxvLCAiCmZyYW1lX2RpZyAtMQpleHRyYWN0IDIgMApjb25jYXQKZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmxlbgppdG9iCmV4dHJhY3QgNiAwCmZyYW1lX2RpZyAwCmNvbmNhdApmcmFtZV9idXJ5IDAKcmV0c3ViCgovLyBwb2NldGFrX2lncmVfY2FzdGVyCnBvY2V0YWtpZ3JlY2FzdGVyXzQ6CnByb3RvIDAgMApieXRlY18wIC8vICIiCmludGNfMCAvLyAwCmJ5dGVjXzAgLy8gIiIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQpmcmFtZV9idXJ5IDIKdHhuIEdyb3VwSW5kZXgKaW50Y18xIC8vIDEKLQpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKZ3R4bnMgVHlwZUVudW0KaW50Y18xIC8vIHBheQo9PQphc3NlcnQKZnJhbWVfZGlnIDEKZnJhbWVfZGlnIDIKY2FsbHN1YiBwb2NldGFraWdyZV8yCmZyYW1lX2J1cnkgMApieXRlYyA5IC8vIDB4MTUxZjdjNzUKZnJhbWVfZGlnIDAKY29uY2F0CmxvZwpyZXRzdWIKCi8vIGhlbGxvX2Nhc3RlcgpoZWxsb2Nhc3Rlcl81Ogpwcm90byAwIDAKYnl0ZWNfMCAvLyAiIgpkdXAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQpmcmFtZV9idXJ5IDEKZnJhbWVfZGlnIDEKY2FsbHN1YiBoZWxsb18zCmZyYW1lX2J1cnkgMApieXRlYyA5IC8vIDB4MTUxZjdjNzUKZnJhbWVfZGlnIDAKY29uY2F0CmxvZwpyZXRzdWI=",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 2,
+            "num_uints": 1
+        },
+        "local": {
+            "num_byte_slices": 2,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {
+                "betting_tip": {
+                    "type": "uint64",
+                    "key": "betting_tip",
+                    "descr": "Betting amount"
+                },
+                "drugi_igrac": {
+                    "type": "bytes",
+                    "key": "drugi_igrac",
+                    "descr": "Acc drugog igraca"
+                },
+                "prvi_igrac": {
+                    "type": "bytes",
+                    "key": "prvi_igrac",
+                    "descr": "Acc prvog igraca"
+                }
+            },
+            "reserved": {}
+        },
+        "local": {
+            "declared": {
+                "hash_number": {
+                    "type": "bytes",
+                    "key": "hash_number",
+                    "descr": "Hash broj igraca"
+                },
+                "number": {
+                    "type": "bytes",
+                    "key": "number",
+                    "descr": "Broj igraca"
+                }
+            },
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "numberguess",
+        "methods": [
+            {
+                "name": "pocetak_igre",
+                "args": [
+                    {
+                        "type": "pay",
+                        "name": "payment"
+                    },
+                    {
+                        "type": "string",
+                        "name": "number"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                }
+            },
+            {
+                "name": "hello",
+                "args": [
+                    {
+                        "type": "string",
+                        "name": "name"
+                    }
+                ],
+                "returns": {
+                    "type": "string"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE",
+        "opt_in": "CALL"
+    }
+}

@@ -1,0 +1,225 @@
+#pragma version 8
+intcblock 0 1
+bytecblock 0x 0x42657a20696772616361 0x62657474696e675f746970 0x64727567695f6967726163 0x707276695f6967726163 0x686173685f6e756d626572 0x42657a20686173682062726f6a61 0x6e756d626572 0x42657a2062726f6a61 0x151f7c75
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l6
+txna ApplicationArgs 0
+pushbytes 0x69a1be22 // "pocetak_igre(pay,string)string"
+==
+bnz main_l5
+txna ApplicationArgs 0
+pushbytes 0x02bece11 // "hello(string)string"
+==
+bnz main_l4
+err
+main_l4:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub hellocaster_5
+intc_1 // 1
+return
+main_l5:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub pocetakigrecaster_4
+intc_1 // 1
+return
+main_l6:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l10
+txn OnCompletion
+intc_1 // OptIn
+==
+bnz main_l9
+err
+main_l9:
+txn ApplicationID
+intc_0 // 0
+!=
+assert
+callsub optin_1
+intc_1 // 1
+return
+main_l10:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+callsub create_0
+intc_1 // 1
+return
+
+// create
+create_0:
+proto 0 0
+bytec_2 // "betting_tip"
+intc_0 // 0
+app_global_put
+bytec_3 // "drugi_igrac"
+bytec_1 // "Bez igraca"
+app_global_put
+bytec 4 // "prvi_igrac"
+bytec_1 // "Bez igraca"
+app_global_put
+retsub
+
+// opt_in
+optin_1:
+proto 0 0
+bytec 4 // "prvi_igrac"
+app_global_get
+bytec_1 // "Bez igraca"
+==
+bnz optin_1_l4
+bytec_3 // "drugi_igrac"
+app_global_get
+bytec_1 // "Bez igraca"
+==
+bnz optin_1_l3
+intc_0 // 0
+return
+optin_1_l3:
+bytec_3 // "drugi_igrac"
+txn Sender
+app_global_put
+b optin_1_l5
+optin_1_l4:
+bytec 4 // "prvi_igrac"
+txn Sender
+app_global_put
+optin_1_l5:
+txn Sender
+bytec 5 // "hash_number"
+bytec 6 // "Bez hash broja"
+app_local_put
+txn Sender
+bytec 7 // "number"
+bytec 8 // "Bez broja"
+app_local_put
+retsub
+
+// pocetak_igre
+pocetakigre_2:
+proto 2 1
+bytec_0 // ""
+txn Sender
+global CurrentApplicationID
+app_opted_in
+// unauthorized
+assert
+intc_1 // pay
+intc_1 // pay
+==
+frame_dig -2
+gtxns Receiver
+global CurrentApplicationAddress
+==
+&&
+bytec_2 // "betting_tip"
+app_global_get
+intc_0 // 0
+==
+&&
+txn Sender
+bytec 7 // "number"
+app_local_get
+bytec 8 // "Bez broja"
+==
+&&
+txn Sender
+bytec 5 // "hash_number"
+app_local_get
+bytec 6 // "Bez hash broja"
+==
+&&
+assert
+bytec_2 // "betting_tip"
+frame_dig -2
+gtxns Amount
+app_global_put
+txn Sender
+bytec 5 // "hash_number"
+frame_dig -1
+extract 2 0
+sha256
+app_local_put
+pushbytes 0x001555737065736e6f207361637576616e2062726f6a21 // 0x001555737065736e6f207361637576616e2062726f6a21
+frame_bury 0
+retsub
+
+// hello
+hello_3:
+proto 1 1
+bytec_0 // ""
+pushbytes 0x48656c6c6f2c20 // "Hello, "
+frame_dig -1
+extract 2 0
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// pocetak_igre_caster
+pocetakigrecaster_4:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 2
+txn GroupIndex
+intc_1 // 1
+-
+frame_bury 1
+frame_dig 1
+gtxns TypeEnum
+intc_1 // pay
+==
+assert
+frame_dig 1
+frame_dig 2
+callsub pocetakigre_2
+frame_bury 0
+bytec 9 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// hello_caster
+hellocaster_5:
+proto 0 0
+bytec_0 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub hello_3
+frame_bury 0
+bytec 9 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
