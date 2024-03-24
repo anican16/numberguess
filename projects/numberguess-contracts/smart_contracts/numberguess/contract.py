@@ -49,7 +49,7 @@ def opt_in() -> pt.Expr:
 # pocetak igre, zapocinje prvi igrac i zadaje broj
 @app.external(authorize=beaker.Authorize.opted_in())
 def pocetak_igre(
-    payment: pt.abi.PaymentTransaction, number: pt.abi.Uint64, *, output: pt.abi.String
+    payment: pt.abi.PaymentTransaction, number: pt.abi.String, *, output: pt.abi.String
 ) -> pt.Expr:
     return pt.Seq(
         pt.Assert(
