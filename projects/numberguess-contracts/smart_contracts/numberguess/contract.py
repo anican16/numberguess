@@ -46,6 +46,27 @@ def opt_in() -> pt.Expr:
     )
 
 
+# pocetak igre, zapocinje prvi igrac i zadaje broj
+@app.external(authorize=beaker.Authorize.opted_in())
+def pocetak_igre(
+    payment: pt.abi.PaymentTransaction, number: pt.abi.Uint64, *, output: pt.abi.String
+) -> pt.Expr:
+    return pt.Seq(
+        pt.Assert(
+            pt.And(
+                payment.type_spec().txn_type_enum() == pt.TxnType.Payment,
+                payment.get().receiver() == pt.Global.current_application_address(),
+                app.state.betting_tip.get() == pt.Int(0),
+                app.state.number[pt.Txn.sender()].get() == pt.Bytes("Bez broja"),
+                app.state.hash_number[pt.Txn.sender()] == pt.Bytes("Bez hash broja"),
+            )
+        ),
+        app.state.betting_tip.set(payment.get().amount()),
+        app.state.hash_number[pt.Txn.sender()].set(pt.Sha256(number.get())),
+        output.set("Uspesno sacuvan broj!"),
+    )
+
+
 @app.external
 def hello(name: pt.abi.String, *, output: pt.abi.String) -> pt.Expr:
     return output.set(pt.Concat(pt.Bytes("Hello, "), name.get()))
