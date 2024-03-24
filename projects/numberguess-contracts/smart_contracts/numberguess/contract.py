@@ -34,6 +34,18 @@ def create() -> pt.Expr:
     return app.initialize_global_state()
 
 
+@app.opt_in(bare=True)
+def opt_in() -> pt.Expr:
+    return pt.Seq(
+        pt.If(app.state.prvi_igrac.get() == pt.Bytes("Bez igraca"))
+        .Then(app.state.prvi_igrac.set(pt.Txn.sender()))
+        .ElseIf(app.state.drugi_igrac.get() == pt.Bytes("Bez igraca"))
+        .Then(app.state.drugi_igrac.set(pt.Txn.sender()))
+        .Else(pt.Reject()),
+        app.initialize_local_state(addr=pt.Txn.sender()),
+    )
+
+
 @app.external
 def hello(name: pt.abi.String, *, output: pt.abi.String) -> pt.Expr:
     return output.set(pt.Concat(pt.Bytes("Hello, "), name.get()))
